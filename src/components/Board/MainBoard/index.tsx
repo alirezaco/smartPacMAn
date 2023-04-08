@@ -1,17 +1,20 @@
 import React, { FC } from "react";
+import { ObjectEnum } from "../../../enum/object.enum";
 import Tiles from "../../Tiles";
 import Filter from "../Filter";
-import Style from './main-board.module.css'
+import Style from "./main-board.module.css";
 
-interface IMainBoard {}
+interface IMainBoard {
+  boards: Array<ObjectEnum>;
+}
 
-const MainBoard: FC<IMainBoard> = () => {
+const MainBoard: FC<IMainBoard> = ({ boards }) => {
   return (
     <div className={Style["parent"]}>
       <Filter></Filter>
-      <Tiles></Tiles>
+      <Tiles boards={boards}></Tiles>
     </div>
   );
-}
+};
 
-export default MainBoard
+export default MainBoard;
