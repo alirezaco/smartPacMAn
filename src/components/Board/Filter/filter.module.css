@@ -6,4 +6,38 @@
   margin-bottom: 5vmin;
   width: 708px;
   display: block;
+  position: relative;
+}
+
+.Btn {
+  border: none;
+  height: 5vmin;
+  width: 20vmin;
+  font-size: calc(5px + 2vmin);
+  font-weight: bolder;
+  background-color: #282c34;
+  color: rgb(84, 192, 84);
+  border: solid rgb(84, 192, 84);
+  border-radius: 5%;
+  /* margin: 2% 0; */
+}
+
+.Btn:hover {
+  background-color: rgb(84, 192, 84);
+  color: black;
+  transition: 0.5s background ease;
+}
+
+.parent-btn {
+  width: 30%;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  padding: 0.5% 0;
+  margin-right: 3%;
+  right:  0;
 }

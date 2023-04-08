@@ -18,7 +18,7 @@ function App() {
       {isStart && !info.isOk && (
         <Info onClickStart={onClickStart} setInfo={setInfo}></Info>
       )}
-      {isStart && info.isOk && <Board info={info as any}></Board>}
+      {isStart && info.isOk && <Board info={info as any} setInfo={setInfo}></Board>}
     </div>
   );
 }

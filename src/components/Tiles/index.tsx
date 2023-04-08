@@ -12,7 +12,7 @@ const createBoard = (boards: Array<ObjectEnum>) => {
     const row = Math.ceil((index + 1) / 16);
 
     items.push(
-      <Tile column={column} row={row} id={row + column} type={type}></Tile>
+      <Tile column={column} row={row} id={index} type={type}></Tile>
     );
 
     if (column === 16) {

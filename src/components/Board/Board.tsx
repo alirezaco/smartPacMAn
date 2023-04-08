@@ -4,6 +4,7 @@ import { ObjectEnum } from "../../enum/object.enum";
 import { SelectTypeEnum } from "../../enum/select-type.enum";
 import { TypeGameEnum } from "../../enum/type-game.enum";
 import { generateBoard } from "../../utils/service/generate-board";
+import HandyBoard from "./HandBoard";
 import MainBoard from "./MainBoard";
 
 interface IBoard {
@@ -12,9 +13,10 @@ interface IBoard {
     typeGame: TypeGameEnum;
     selection: SelectTypeEnum;
   };
+  setInfo: any;
 }
 
-const Board: FC<IBoard> = ({ info }) => {
+const Board: FC<IBoard> = ({ info, setInfo }) => {
   const [board, setBoard] = useState<Array<ObjectEnum>>();
 
   useEffect(() => {
@@ -23,7 +25,25 @@ const Board: FC<IBoard> = ({ info }) => {
     }
   }, [info, setBoard]);
 
-  return <>{board && <MainBoard boards={board}></MainBoard>}</>;
+  return (
+    <>
+      {board && (
+        <MainBoard
+          boards={board}
+          setInfo={setInfo}
+          typeGame={info.typeGame}
+          setBoard={setBoard}
+        ></MainBoard>
+      )}
+      {info.selection === SelectTypeEnum.HANDY && (
+        <HandyBoard
+          boards={Array.from({ length: 256 })}
+          setInfo={setInfo}
+          typeGame={info.typeGame}
+        ></HandyBoard>
+      )}
+    </>
+  );
 };
 
 export default Board;

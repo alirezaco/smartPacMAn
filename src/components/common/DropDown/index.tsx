@@ -19,7 +19,7 @@ const Dropdown: FC<IDropdown> = ({ trigger, menu, className, Id }) => {
     <div className={`${Style["dropdown"]} ${className}`} id={Id}>
       {React.cloneElement(trigger, {
         onClick: handleOpen,
-        className: Style["trigger"]
+        className: `${Style["trigger"]} ${trigger.props.className}`
       })}
       {open ? (
         <ul className={Style["menu"]}>
