@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Info from "./components/Info";
+import Start from "./components/Start/Start";
 
 function App() {
+  const [isStart, setIsStart] = useState<boolean>(false);
+  const [info, setInfo] = useState<Record<string, any>>({ isOk: false });
+
+  const onClickStart = (flag: boolean) => {
+    setIsStart(flag);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isStart && <Start onClickStart={onClickStart}></Start>}
+      {isStart && !info.isOk && (
+        <Info onClickStart={onClickStart} setInfo={setInfo}></Info>
+      )}
+      {isStart && info.isOk && <p></p>}
     </div>
   );
 }

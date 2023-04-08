@@ -1,0 +1,35 @@
+.App-logo {
+  height: 40vmin;
+  margin-top: -15%;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.Btn {
+  border: none;
+  height: 8vmin;
+  width: 28vmin;
+  font-size: calc(10px + 2vmin);
+  font-weight: bolder;
+  background-color: #282c34;
+  color: rgb(84, 192, 84);
+  border: solid rgb(84, 192, 84);
+  border-radius: 5%;
+}
+
+.Btn:hover {
+  background-color: rgb(84, 192, 84);
+  color: black;
+  transition: 0.5s background ease;
+}

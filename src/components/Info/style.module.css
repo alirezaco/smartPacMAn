@@ -1,0 +1,112 @@
+.back {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.form-box {
+  min-width: 50%;
+  height: 50vh;
+  margin: 0vw;
+  padding: 5vw;
+  position: relative;
+}
+
+.form-box label {
+  font-size: calc(9px + 2vmin);
+}
+
+.form-box h5 {
+  font-size: 35px;
+  text-align: center;
+  color: rgb(84, 192, 84);
+  margin: 0 0 8% 0;
+}
+
+.form-box input,
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  margin: 0.9vw 0;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.BtnParrent {
+  width: 100%;
+  margin-top: 8%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.prevBtn,
+.nextBtn {
+  display: inline-block;
+  width: 30%;
+  height: 5rem;
+  border: 0;
+  cursor: pointer;
+  font-size: calc(10px + 2vmin);
+  font-weight: bolder;
+  background-color: #282c34;
+  color: rgb(84, 192, 84);
+  border: solid rgb(84, 192, 84);
+  border-radius: 5%;
+}
+
+.prevBtn {
+  border-radius: 20px 0 0 20px;
+}
+
+.nextBtn {
+  border-radius: 0 20px 20px 0;
+}
+
+.nextBtn:hover,
+.prevBtn:hover {
+  background-color: rgb(84, 192, 84);
+  color: black;
+  transition: 1s background ease;
+}
+
+.name {
+  display: inline;
+  width: 50%;
+  margin-left: -5%;
+  margin-right: 5%;
+}
+
+.name input {
+  width: 30%;
+  margin-left: 2%;
+}
+
+.algorithm {
+  margin-left: 5%;
+  margin-right: -5%;
+  display: inline;
+  width: 50%;
+}
+
+.type {
+  margin-left: -11.75%;
+  margin-right: 5%;
+  display: inline;
+  width: 50%;
+}
+
+.select {
+  margin-left: 11.75%;
+  margin-right: -5%;
+  display: inline;
+  width: 50%;
+}
+
+.error {
+  color: red;
+}
