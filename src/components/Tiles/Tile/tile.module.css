@@ -3,7 +3,7 @@
   height: 40px;
   display: inline-block;
   background-color: rgb(207, 207, 207);
-  /* border: solid 0.25px; */
+  border: solid 1px; 
 }
 
 .wall {
@@ -12,4 +12,13 @@
 
 .pac-man {
   background-color: green;
+}
+
+.food {
+  border-radius: 50%;
+  background-color: yellow;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+  margin-top: 30%;
 }

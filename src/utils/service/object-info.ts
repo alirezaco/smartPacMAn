@@ -21,6 +21,11 @@ export const getObjectInfo = (type: ObjectEnum): IGetObjectInfo => {
         className: "pac-man",
       };
 
+    case ObjectEnum.FOOD:
+      return {
+        className: "",
+      };
+
     default:
       return {
         className: "",

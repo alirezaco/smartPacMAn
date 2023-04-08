@@ -1,4 +1,5 @@
 import { ObjectEnum } from "../../enum/object.enum";
+import { TypeGameEnum } from "../../enum/type-game.enum";
 
 const randomTile = () => {
   const random = Math.ceil(Math.random() * 10);
@@ -33,21 +34,55 @@ const randomPacMAn = () => {
   return index;
 };
 
-export const generateRandomBoard = () => {
+const randomFood = (count: number, pacManIndex: number) => {
+  const res: Array<number> = [];
+  for (let i = 0; i < count; i++) {
+    const random = Math.ceil(Math.random() * 1000);
+
+    let index = random % (16 * 16);
+
+    if (res.find((x) => x === index) || pacManIndex === index) {
+      i--;
+    } else {
+      res.push(index);
+    }
+  }
+
+  return res;
+};
+
+export const generateRandomBoard = (typeGame: TypeGameEnum) => {
   const result: Array<ObjectEnum> = [];
 
   for (let index = 0; index < 16 * 16; index++) {
     result.push(randomTile());
   }
 
-  result[randomPacMAn()] = ObjectEnum.PAC_MAN;
+  const pacManIndex = randomPacMAn();
+  result[pacManIndex] = ObjectEnum.PAC_MAN;
+
+  if (typeGame === TypeGameEnum.ONE) {
+    result[randomFood(1, pacManIndex)[0]] = ObjectEnum.FOOD;
+  } else {
+    const randoms = randomFood(
+      Math.ceil((Math.random() * 1000) % 7) + 1,
+      pacManIndex
+    );
+
+    randoms.map((value) => {
+      result[value] = ObjectEnum.FOOD;
+    });
+  }
 
   return result;
 };
 
-export const generateBoard = (board?: Array<ObjectEnum>) => {
+export const generateBoard = (
+  typeGame: TypeGameEnum,
+  board?: Array<ObjectEnum>
+) => {
   if (!board || board.length === 0) {
-    board = generateRandomBoard();
+    board = generateRandomBoard(typeGame);
   }
 
   return board;

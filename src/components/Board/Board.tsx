@@ -19,7 +19,7 @@ const Board: FC<IBoard> = ({ info }) => {
 
   useEffect(() => {
     if (info.selection === SelectTypeEnum.UNHANDY) {
-      setBoard(generateBoard());
+      setBoard(generateBoard(info.typeGame));
     }
   }, [info, setBoard]);
 
