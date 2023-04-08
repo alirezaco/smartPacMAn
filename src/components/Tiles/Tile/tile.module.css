@@ -1,0 +1,15 @@
+.tile {
+  width: 15px;
+  height: 14.5px;
+  display: inline-block;
+  background-color: rgb(207, 207, 207);
+  /* border: solid 0.25px; */
+}
+
+.wall {
+  background-color: blue;
+}
+
+.pac-man {
+  background-color: green;
+}

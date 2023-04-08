@@ -1,0 +1,9 @@
+.filter {
+  border: solid rgb(84, 192, 84);
+  border-radius: 2%;
+  color: white;
+  height: 15vmin;
+  margin-bottom: 5vmin;
+  width: 250px;
+  display: block;
+}

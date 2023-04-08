@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Board from "./components/Board/Board";
 import Info from "./components/Info";
 import Start from "./components/Start/Start";
 
@@ -17,7 +18,7 @@ function App() {
       {isStart && !info.isOk && (
         <Info onClickStart={onClickStart} setInfo={setInfo}></Info>
       )}
-      {isStart && info.isOk && <p></p>}
+      {isStart && info.isOk && <Board></Board>}
     </div>
   );
 }
