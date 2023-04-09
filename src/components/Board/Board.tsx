@@ -33,13 +33,15 @@ const Board: FC<IBoard> = ({ info, setInfo }) => {
           setInfo={setInfo}
           typeGame={info.typeGame}
           setBoard={setBoard}
+          selectionType={info.selection}
         ></MainBoard>
       )}
-      {info.selection === SelectTypeEnum.HANDY && (
+      {info.selection === SelectTypeEnum.HANDY && !board && (
         <HandyBoard
           boards={Array.from({ length: 256 })}
           setInfo={setInfo}
           typeGame={info.typeGame}
+          setBoard={setBoard}
         ></HandyBoard>
       )}
     </>

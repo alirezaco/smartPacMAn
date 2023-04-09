@@ -3,16 +3,22 @@ import { ObjectEnum } from "../../enum/object.enum";
 import Tile from "./Tile";
 import Style from "./tiles.module.css";
 
-const createBoard = (boards: Array<ObjectEnum>) => {
+const createBoard = (boards: Array<ObjectEnum>, onClick?: (index:number) => void) => {
   let lines: Array<ReactNode> = [];
   let items: Array<ReactNode> = [];
 
   boards.map((type, index) => {
-    const column = ((index) % 16) + 1;
+    const column = (index % 16) + 1;
     const row = Math.ceil((index + 1) / 16);
 
     items.push(
-      <Tile column={column} row={row} id={index} type={type}></Tile>
+      <Tile
+        column={column}
+        row={row}
+        id={index}
+        type={type}
+        onClick={onClick}
+      ></Tile>
     );
 
     if (column === 16) {
@@ -25,11 +31,12 @@ const createBoard = (boards: Array<ObjectEnum>) => {
 };
 
 interface ITiles {
-  boards: Array<ObjectEnum>
+  boards: Array<ObjectEnum>;
+  onClick?: (index:number) => void;
 }
 
-const Tiles: FC<ITiles> = ({boards}) => {
-  return <div className={Style["tiles"]}>{createBoard(boards)}</div>;
+const Tiles: FC<ITiles> = ({ boards, onClick }) => {
+  return <div className={Style["tiles"]}>{createBoard(boards, onClick)}</div>;
 };
 
 export default Tiles;
