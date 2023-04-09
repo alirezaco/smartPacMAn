@@ -41,6 +41,21 @@ const randomFood = (count: number, pacManIndex: number) => {
 
     let index = random % (16 * 16);
 
+    const column = (index % 16) + 1;
+    const row = Math.ceil((index + 1) / 16);
+
+    if (row === 16) {
+      index -= 18;
+    } else if (row === 1) {
+      index += 18;
+    }
+
+    if (column === 16) {
+      index--;
+    } else if (column === 1) {
+      index++;
+    }
+
     if (res.find((x) => x === index) || pacManIndex === index) {
       i--;
     } else {
