@@ -3,4 +3,6 @@ export enum ObjectEnum {
   PAC_MAN = "pacMan",
   TILE = "tile",
   FOOD = "food",
+  MAIN_WAY = "mainWay",
+  MOVES = "moves",
 }

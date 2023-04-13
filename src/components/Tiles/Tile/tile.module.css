@@ -4,6 +4,9 @@
   display: inline-block;
   background-color: rgb(207, 207, 207);
   border: solid 1px; 
+  font-size: 15px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .wall {
@@ -19,6 +22,28 @@
   background-color: yellow;
   width: 40%;
   height: 40%;
-  margin: auto;
-  margin-top: 30%;
+  /* margin: auto; */
+  /* margin-top: 0; */
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+.num {
+  border-radius: 50%;
+  width: 40%;
+  height: 40%;
+  /* margin: auto; */
+  /* margin-top: 0; */
+  position: absolute;
+  top: 30%;
+  left: 20%
+}
+
+.main-way {
+  background-color: aquamarine;
+}
+
+.moves {
+  background-color: brown;
 }

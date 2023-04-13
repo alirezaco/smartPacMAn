@@ -34,6 +34,7 @@ const Board: FC<IBoard> = ({ info, setInfo }) => {
           typeGame={info.typeGame}
           setBoard={setBoard}
           selectionType={info.selection}
+          algorithm={info.algorithm}
         ></MainBoard>
       )}
       {info.selection === SelectTypeEnum.HANDY && !board && (

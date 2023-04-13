@@ -9,9 +9,10 @@ interface ITile {
   column: number;
   type: ObjectEnum;
   onClick?: (index: number) => void;
+  way?: number
 }
 
-const Tile: FC<ITile> = ({ id, row, column, type, onClick }) => {
+const Tile: FC<ITile> = ({ id, row, column, type, onClick, way }) => {
   if (row === 1 || row === 16 || column === 1 || column === 16) {
     type = ObjectEnum.WALL;
   }
@@ -29,6 +30,7 @@ const Tile: FC<ITile> = ({ id, row, column, type, onClick }) => {
       className={`${Style["tile"]} ${Style[objectInfo.className]}`}
       onClick={onClickHandller}
     >
+      {type === ObjectEnum.MAIN_WAY && <div className={Style["num"]}>{way}</div>}
       {type === ObjectEnum.FOOD && <div className={Style["food"]}></div>}
     </div>
   );
