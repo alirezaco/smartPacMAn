@@ -1,5 +1,6 @@
 import { AlgorithmEnum } from "../../enum/algorithm.enum";
 import { ObjectEnum } from "../../enum/object.enum";
+import { calAStart } from "./AStar";
 import { calBFS } from "./bfs";
 import { calDFS } from "./dfs";
 
@@ -58,6 +59,10 @@ export const calMoves = (
     moves = res.moves;
   } else if (aligorithm === AlgorithmEnum.BFS) {
     const res = calBFS(pacManIndex, foods, walls);
+    mainWay = res.mainWay;
+    moves = res.moves;
+  } else if (aligorithm === AlgorithmEnum.A_START) {
+    const res = calAStart(pacManIndex, foods, walls);
     mainWay = res.mainWay;
     moves = res.moves;
   }

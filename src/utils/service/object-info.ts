@@ -28,7 +28,7 @@ export const getObjectInfo = (type: ObjectEnum): IGetObjectInfo => {
 
     case ObjectEnum.MAIN_WAY:
       return {
-        className: "main-way",
+        className: "",
       };
 
     case ObjectEnum.MOVES:
